@@ -37,7 +37,7 @@ class ProjectViewSet(viewsets.ModelViewSet):
     queryset = Project.objects.all()  # todos los proyectos disponibles
     serializer_class = ProjectSerializer  # serializador para proyectos
 
-
+0
 # Lo mismo pasa con tareas, pero con relaciones cargadas para evitar errores de rendimiento.
 class TaskViewSet(viewsets.ModelViewSet):
     queryset = Task.objects.select_related("project").prefetch_related("tags").all()  # tareas con relaciones cargadas
